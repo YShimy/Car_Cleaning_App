@@ -107,3 +107,9 @@ One line per decision: **what** — why.
 - **Onboarding tap count: 12 taps plus typing** — every remaining tap is a choice or a confirmation of one. Plan and day do not auto-advance, so people can compare before committing; the code step does auto-advance.
 - **Skeletons show for ~350 ms the first time Home, Washes, washer Today and admin Overview open, then never again in that page load** — realistic first impression, instant taps afterwards.
 - **`/share` renders the QR code locally with the `qrcode` package** — the URL is never sent to a QR web service (the plan forbids network calls).
+
+## Phase 12 — Tests
+
+- **`rules.ts` is at 100% line, branch and function coverage; reducers and selectors are tested against the generated data** — the business rules are the part most likely to change after interviews, so they are the most protected.
+- **The E2E test runs against the production build (`vite preview`) on a phone profile** — it tests what is deployed, not the dev server.
+- **The E2E asserts no console errors** — the quality bar in section 12 is checked on every run rather than by hand.

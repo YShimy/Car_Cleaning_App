@@ -100,3 +100,10 @@ One line per decision: **what** — why.
 - **The access log is derived from wash times** — entry is the washer's first arrival that day, exit the last completed wash; a washer still working shows "On site now".
 - **Monthly report uses the browser's print dialog** — "Save as PDF" is built into every browser, so no PDF library is needed; navigation and buttons are hidden in print.
 - **Today's generated wash times are clamped into the service window** — opening the demo in the evening must not show washers entering at 7 PM.
+
+## Phase 11 — Polish
+
+- **Lighthouse was not run in the build environment** (it is not installed there and could not be downloaded). Instead a scripted audit checked every route at 390, 768, 1280 and 1440 px for horizontal overflow, unnamed controls, unlabelled inputs, touch targets under 40 px, text under 13 px and console errors, and all pass. Run Lighthouse yourself on the deployed URL to confirm the section 12 targets.
+- **Onboarding tap count: 12 taps plus typing** — every remaining tap is a choice or a confirmation of one. Plan and day do not auto-advance, so people can compare before committing; the code step does auto-advance.
+- **Skeletons show for ~350 ms the first time Home, Washes, washer Today and admin Overview open, then never again in that page load** — realistic first impression, instant taps afterwards.
+- **`/share` renders the QR code locally with the `qrcode` package** — the URL is never sent to a QR web service (the plan forbids network calls).

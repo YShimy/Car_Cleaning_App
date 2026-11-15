@@ -279,7 +279,7 @@ export function HomePage() {
                 <SectionTitle>Your plan</SectionTitle>
                 <Link
                   to="/customer/account"
-                  className="text-primary text-sm font-medium underline underline-offset-2"
+                  className="text-primary -my-2 inline-flex min-h-11 items-center text-sm font-medium underline underline-offset-2"
                 >
                   Manage
                 </Link>

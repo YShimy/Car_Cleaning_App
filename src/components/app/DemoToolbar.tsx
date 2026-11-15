@@ -96,7 +96,7 @@ export function DemoToolbar() {
     'flex min-h-10 w-full items-center gap-2 rounded-lg px-2.5 text-left text-sm font-medium hover:bg-white/10';
 
   return (
-    <div className="demo-toolbar no-print fixed bottom-20 left-2 z-[35] text-white min-[600px]:bottom-4 min-[600px]:left-4">
+    <div className="demo-toolbar no-print fixed bottom-40 left-2 z-[35] text-white min-[600px]:bottom-4 min-[600px]:left-4">
       {open && (
         <div
           className="animate-fade-in mb-2 w-64 space-y-3 rounded-2xl bg-[#1b2330]/95 p-3 shadow-frame backdrop-blur"

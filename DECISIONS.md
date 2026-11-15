@@ -73,3 +73,11 @@ One line per decision: **what** — why.
 - **Plan changes apply from tomorrow with a plain prorating note** — the demo does not compute prorated charges; it states the rule.
 - **Notifications are marked read when the screen opens but stay highlighted for that visit** — the badge clears without the user losing track of what was new.
 - **Demo toolbar is hidden while any sheet is open** — it must never cover a primary button.
+
+## Phase 8 — Washer app
+
+- **The wash flow hides the tab bar and uses 56 px buttons throughout** — one task at a time, usable one-handed outdoors.
+- **"I found the car" marks the washer as on site; the before photo starts the wash** — the customer's timeline follows real events with no extra taps for the washer.
+- **Checklist and damage marks are saved as the washer goes** — closing the flow mid-wash and reopening it resumes at the checklist.
+- **Washer flags ("car not found", "car covered") skip the wash, open an issue and notify the customer; "customer asked to skip" only skips** — the office needs to follow up on the first two, not the third.
+- **A demo-only washer switcher lives in Profile (hidden in presentation mode)** — lets the presenter jump to a washer who works today.

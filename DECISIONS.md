@@ -32,3 +32,8 @@ One line per decision: **what** — why.
 - **Weather delays affect a whole compound-day** — rain does not hit single cars; three rained-off compound-days are generated in the history.
 - **Stored data is regenerated when the calendar day changes** — dates are relative to "today"; yesterday's "live" washes would look wrong. Interview recordings are stored separately and survive.
 - **localStorage writes are debounced (250 ms)** — the state is ~1.6 MB of JSON; one write per burst of actions keeps taps instant on phones.
+
+## Phase 3 — Car illustrations
+
+- **Before/after slider is a native range input over the picture** — mouse, touch and keyboard support and slider semantics for screen readers come from the browser instead of custom pointer code.
+- **Dirt and sparkles are seeded per wash** — the same wash always shows the same "photo", like a real one would.

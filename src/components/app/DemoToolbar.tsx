@@ -54,7 +54,8 @@ export function DemoToolbar() {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  if (session.presentationMode) return null;
+  // During an interview the resident should see only the product.
+  if (session.presentationMode || session.interviewMode) return null;
 
   // Customers created in this demo session (ids from the generator are numeric).
   const created = customers.filter((c) => c.id !== NOUR_ID && !/^cust_\d{4}$/.test(c.id));
@@ -185,7 +186,7 @@ export function DemoToolbar() {
         )}
       >
         <FlaskConical className="size-4" aria-hidden />
-        Demo
+        <span className="max-[599px]:sr-only">Demo</span>
         <ChevronDown
           className={cn('size-4 transition-transform', open ? '' : 'rotate-180')}
           aria-hidden

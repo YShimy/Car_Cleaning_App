@@ -45,3 +45,13 @@ One line per decision: **what** — why.
 - **Demo toolbar sits above the tab bar on phones** — bottom-left would cover the Home tab.
 - **Reset keeps presentation mode on** — resetting between two interviews should not reveal the demo controls.
 - **WhatsApp-style previews come from watching the notification list** — any action in any role that notifies the logged-in customer shows the preview, with no coupling between the store and the toast UI.
+
+## Phase 5 — Customer onboarding
+
+- **Steps 2, 3 and 4 are split into two screens each (still "Step X of 7")** — the plan asks for at most 3 inputs per screen, and the car step alone has 7 fields.
+- **A first-name field was added to the "Your home" screen** — the success screen greets the customer by name, and the plan had no screen that asks for it.
+- **No plan or day is pre-selected** — a default would bias the plan and day choices recorded in interviews. The one exception: when only one option is possible (Premium, or one day full) it is selected automatically.
+- **Make, model and year are native selects rather than a searchable list** — 21 models is short enough, and the native picker is the most familiar control on a phone.
+- **The demo toolbar is hidden while an interview is being recorded** — the resident should see only the product; it returns when they finish or abandon.
+- **Cash on first wash creates an active subscription with a "due" payment** — the slot is held; admin sees the amount as outstanding.
+- **Choosing a different compound or plan clears the chosen day** — days and capacity belong to the compound, and Premium uses both days.

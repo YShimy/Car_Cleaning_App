@@ -76,3 +76,7 @@ export const CAR_COLOR_WEIGHTS: [CarColor, number][] = [
 ];
 
 export const carLabel = (car: { make: string; model: string }) => `${car.make} ${car.model}`;
+
+/** Body type for a make/model; defaults to sedan for the live preview. */
+export const bodyTypeOf = (make: string, model: string): BodyType =>
+  CAR_MODELS.find((m) => m.make === make && m.model === model)?.bodyType ?? 'sedan';

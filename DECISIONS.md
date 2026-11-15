@@ -92,3 +92,11 @@ One line per decision: **what** — why.
 - **Weather delay is offered only for today and future dates, per compound column** — the past cannot be rescheduled.
 - **Resolving an issue requires a reply** — the customer sees the reply in their app, so an empty "resolved" would feel dismissive.
 - **Interview sessions page is linked only from the demo toolbar** — it is a research tool, not part of the product being shown.
+
+## Phase 10 — Compound manager portal
+
+- **Everything on one page, read-mostly** — the manager's questions (who enters, when, how residents rate it, what was agreed) are answered without navigation.
+- **Complaints show type, unit ("Building 14") and status only** — no resident names and no free-text descriptions, which could identify a resident.
+- **The access log is derived from wash times** — entry is the washer's first arrival that day, exit the last completed wash; a washer still working shows "On site now".
+- **Monthly report uses the browser's print dialog** — "Save as PDF" is built into every browser, so no PDF library is needed; navigation and buttons are hidden in print.
+- **Today's generated wash times are clamped into the service window** — opening the demo in the evening must not show washers entering at 7 PM.

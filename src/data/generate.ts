@@ -4,7 +4,7 @@
  * so the demo always feels current.
  */
 import { addDays, addMinutes, addMonths, startOfDay } from 'date-fns';
-import { PLANS } from '@/config/business';
+import { PLANS, SERVICE_WINDOW } from '@/config/business';
 import { RATING_TAGS } from '@/config/copy';
 import { addDaysISO, fromISODate, toISODate, weekdayOf } from '@/lib/dates';
 import { formatEGP, initialsOf, SERVICE_WINDOW_SENTENCE } from '@/lib/format';
@@ -441,6 +441,14 @@ export function generateDemoData(now: Date = new Date(), seed: number = DEMO_SEE
   }
 
   // Today: a live mix of completed, in progress, on site and scheduled.
+  // Times are placed inside the service window even if the demo is opened
+  // in the evening, so the board and the access log always look plausible.
+  const liveNow = new Date(
+    Math.min(
+      Math.max(now.getTime(), addMinutes(today, SERVICE_WINDOW.startHour * 60 + 150).getTime()),
+      addMinutes(today, SERVICE_WINDOW.endHour * 60 - 45).getTime(),
+    ),
+  );
   for (const compound of compounds) {
     if (!compound.serviceDays.includes(todayWd)) continue;
     const todaySubs = subscriptions.filter(
@@ -455,7 +463,7 @@ export function generateDemoData(now: Date = new Date(), seed: number = DEMO_SEE
       const doneCount = Math.floor(route.length * 0.45);
       route.forEach((sub, i) => {
         if (i < doneCount) {
-          const completedAt = addMinutes(now, -10 - (doneCount - 1 - i) * 24);
+          const completedAt = addMinutes(liveNow, -10 - (doneCount - 1 - i) * 24);
           newWash(sub, today, {
             status: 'completed',
             arrivedAt: addMinutes(completedAt, -22).toISOString(),
@@ -468,14 +476,14 @@ export function generateDemoData(now: Date = new Date(), seed: number = DEMO_SEE
         } else if (i === doneCount && wi === 0) {
           newWash(sub, today, {
             status: 'in_progress',
-            arrivedAt: addMinutes(now, -9).toISOString(),
-            startedAt: addMinutes(now, -7).toISOString(),
+            arrivedAt: addMinutes(liveNow, -9).toISOString(),
+            startedAt: addMinutes(liveNow, -7).toISOString(),
             beforePhotoSeed: rng.int(1, 99999),
           });
         } else if (i === doneCount) {
           newWash(sub, today, {
             status: 'washer_on_site',
-            arrivedAt: addMinutes(now, -3).toISOString(),
+            arrivedAt: addMinutes(liveNow, -3).toISOString(),
           });
         } else {
           newWash(sub, today, {});
@@ -489,7 +497,7 @@ export function generateDemoData(now: Date = new Date(), seed: number = DEMO_SEE
   if (nourToday) {
     Object.assign(nourToday, {
       status: 'washer_on_site',
-      arrivedAt: addMinutes(now, -5).toISOString(),
+      arrivedAt: addMinutes(liveNow, -5).toISOString(),
     });
     delete nourToday.startedAt;
     delete nourToday.completedAt;

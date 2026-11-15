@@ -81,3 +81,14 @@ One line per decision: **what** — why.
 - **Checklist and damage marks are saved as the washer goes** — closing the flow mid-wash and reopening it resumes at the checklist.
 - **Washer flags ("car not found", "car covered") skip the wash, open an issue and notify the customer; "customer asked to skip" only skips** — the office needs to follow up on the first two, not the third.
 - **A demo-only washer switcher lives in Profile (hidden in presentation mode)** — lets the presenter jump to a washer who works today.
+
+## Phase 9 — Admin dashboard
+
+- **Every KPI and chart is computed in `selectors.ts` from the store** — complete a wash or resolve an issue in another role and the numbers move; nothing is hard-coded.
+- **"Active subscribers" counts active subscriptions (cars)** — a two-car household is two subscriptions and two washes a week; the card's hint says so.
+- **On-time completion = completed on the scheduled day ÷ (completed + missed + weather-delayed), last 30 days** — customer skips are the customer's choice and are excluded.
+- **Monthly churn = subscriptions ended in the last 30 days ÷ subscriptions live 30 days ago.**
+- **All four charts are single-series in the brand colour, with no legend** — the title names the series; values are on hover and in a screen-reader table. Revenue by plan is a bar chart, as the plan asks (no pie).
+- **Weather delay is offered only for today and future dates, per compound column** — the past cannot be rescheduled.
+- **Resolving an issue requires a reply** — the customer sees the reply in their app, so an empty "resolved" would feel dismissive.
+- **Interview sessions page is linked only from the demo toolbar** — it is a research tool, not part of the product being shown.

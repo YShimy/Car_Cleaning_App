@@ -5,21 +5,14 @@ import { PageHeader } from '@/components/app/PageHeader';
 import { Accordion } from '@/components/ui/Accordion';
 import { Card, SectionTitle } from '@/components/ui/Card';
 import { EmptyState } from '@/components/ui/EmptyState';
-import { StatusChip, type Tone } from '@/components/ui/StatusChip';
+import { StatusChip } from '@/components/ui/StatusChip';
 import { ISSUE_STATUS_LABEL, ISSUE_TYPE_LABEL } from '@/config/copy';
+import { ISSUE_TONE } from '@/config/status';
 import { formatDateShort } from '@/lib/format';
 import { useDemoStore } from '@/store/demoStore';
 import { useCustomer } from '@/store/hooks';
-import type { IssueStatus } from '@/types/domain';
 import { ChatScreen } from './ChatScreen';
 import { FAQ } from './faq';
-
-// eslint-disable-next-line react-refresh/only-export-components
-export const ISSUE_TONE: Record<IssueStatus, Tone> = {
-  submitted: 'neutral',
-  under_review: 'info',
-  resolved: 'success',
-};
 
 function ActionRow({
   to,

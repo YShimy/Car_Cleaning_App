@@ -10,3 +10,10 @@ One line per decision: **what** — why.
 - **Single `tsconfig.json`** — one config for app, tests and tool configs keeps `npm run typecheck` simple.
 - **`@playwright/test` pinned to 1.63.0** — matches the Chromium build available in the build environment; CI installs the matching browser itself.
 - **Token colours darkened slightly from the plan's examples** — success/warning/secondary-text examples fall below 4.5:1 on white; the plan asks for WCAG AA.
+
+## Phase 1 — Design system
+
+- **Native `<select>` instead of a custom Radix select** — on phones the native picker is the most familiar and most accessible control for a 25–65 audience.
+- **Sheets portal into the phone frame** — the frame has a CSS transform, so `position: fixed` overlays stay inside the "phone" on desktop instead of covering the whole window.
+- **Toasts in a tiny separate Zustand store (not persisted)** — toasts are transient UI, not demo data; keeping them out of `useDemoStore` keeps the persisted state clean.
+- **Types, `business.ts` and `rules.ts` written alongside Phase 1** — PlanCard and DayCapacityCard need prices and capacity status; their tests land in Phase 2.

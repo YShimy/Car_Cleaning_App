@@ -37,3 +37,11 @@ One line per decision: **what** — why.
 
 - **Before/after slider is a native range input over the picture** — mouse, touch and keyboard support and slider semantics for screen readers come from the browser instead of custom pointer code.
 - **Dirt and sparkles are seeded per wash** — the same wash always shows the same "photo", like a real one would.
+
+## Phase 4 — Launcher, toolbar, routing
+
+- **"Simulate next step" pulls the persona's next wash forward to today if they have none today** — otherwise the live flow could only be demonstrated on the customer's actual wash day. It also moves every washer working today one step, so the admin board moves too.
+- **Customer and washer views are in the main bundle; admin, manager, styleguide and share pages are lazy chunks** — phones load only what they need; the charts library never reaches a resident's phone.
+- **Demo toolbar sits above the tab bar on phones** — bottom-left would cover the Home tab.
+- **Reset keeps presentation mode on** — resetting between two interviews should not reveal the demo controls.
+- **WhatsApp-style previews come from watching the notification list** — any action in any role that notifies the logged-in customer shows the preview, with no coupling between the store and the toast UI.

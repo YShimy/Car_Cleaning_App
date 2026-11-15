@@ -1,0 +1,10 @@
+export { CompoundDetailPage } from './CompoundDetailPage';
+export { CompoundsPage } from './CompoundsPage';
+export { CustomerDetailPage } from './CustomerDetailPage';
+export { CustomersPage } from './CustomersPage';
+export { InterviewsPage } from './InterviewsPage';
+export { IssuesPage } from './IssuesPage';
+export { OverviewPage } from './OverviewPage';
+export { PaymentsPage } from './PaymentsPage';
+export { SchedulePage } from './SchedulePage';
+export { WashersPage } from './WashersPage';

@@ -55,3 +55,10 @@ One line per decision: **what** — why.
 - **The demo toolbar is hidden while an interview is being recorded** — the resident should see only the product; it returns when they finish or abandon.
 - **Cash on first wash creates an active subscription with a "due" payment** — the slot is held; admin sees the amount as outstanding.
 - **Choosing a different compound or plan clears the chosen day** — days and capacity belong to the compound, and Premium uses both days.
+
+## Phase 6 — Customer core
+
+- **"Washer on site" reads "Your car is next" in the timeline** — on site means the washer is in the compound, not yet at this car; saying "washing" early would be untrue.
+- **Rating tags appear only after stars are chosen** — positive and negative tags differ, and showing both at once adds noise.
+- **Skip, pause and change-day rules are enforced in reducers and explained in sheets** — the UI disables what it can and the reducer still rejects anything invalid, with a plain-language message.
+- **Demo toolbar sits below sheets (z-index)** — it must never cover a sheet's primary button.

@@ -62,3 +62,14 @@ One line per decision: **what** — why.
 - **Rating tags appear only after stars are chosen** — positive and negative tags differ, and showing both at once adds noise.
 - **Skip, pause and change-day rules are enforced in reducers and explained in sheets** — the UI disables what it can and the reducer still rejects anything invalid, with a plain-language message.
 - **Demo toolbar sits below sheets (z-index)** — it must never cover a sheet's primary button.
+
+## Phase 7 — Customer extras
+
+- **Add-a-car is a 3-step sheet (car, plan and day, review)** — an existing customer already has a compound and payment method, so the full 7-step flow would be repetition.
+- **Add-ons are charged once, when added; a free tire-shine credit is used automatically** — "skip = one free add-on" stays simple and visible, with no separate redemption step.
+- **Damage reports older than 24 hours are blocked with an explanation and a route to a person** — the rule is enforced, but the customer is not left at a dead end.
+- **Chat is a fixed script, labelled as such** — the plan asks for no AI; the label avoids implying a live agent.
+- **Cancel flow: reason, then one confirmation with the end date; "Pause instead" is offered once as a secondary button** — honest, two steps, no guilt copy; it can be undone until the end date.
+- **Plan changes apply from tomorrow with a plain prorating note** — the demo does not compute prorated charges; it states the rule.
+- **Notifications are marked read when the screen opens but stay highlighted for that visit** — the badge clears without the user losing track of what was new.
+- **Demo toolbar is hidden while any sheet is open** — it must never cover a primary button.

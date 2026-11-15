@@ -42,7 +42,8 @@ function useNotificationToasts(customerId: string | undefined) {
     for (const n of notifications) {
       if (seen.current.has(n.id)) continue;
       seen.current.add(n.id);
-      if (n.customerId !== customerId) continue;
+      // Confirmations of the customer's own actions already show a toast.
+      if (n.customerId !== customerId || n.kind === 'promo' || n.kind === 'payment') continue;
       if (whatsapp) toast.whatsapp(n.title, n.body);
       else toast.show(n.title, n.body);
     }

@@ -164,6 +164,11 @@
   }
 }
 
+/* The demo controls must never cover a sheet's buttons. */
+body:has([role='dialog']) .demo-toolbar {
+  display: none;
+}
+
 @media print {
   .no-print {
     display: none !important;

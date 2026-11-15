@@ -39,21 +39,9 @@ import {
 import { capacityByDay, upcomingWashes } from '@/lib/selectors';
 import { useDemoStore } from '@/store/demoStore';
 import { useCustomer } from '@/store/hooks';
-import { RuleError } from '@/store/reducers';
 import type { Car, Subscription, Wash, Weekday } from '@/types/domain';
+import { attempt } from '../shared/attempt';
 import { SkipSheet } from '../shared/SkipSheet';
-
-/** Runs a store action and shows rule violations as a plain-language toast. */
-function attempt(action: () => void): boolean {
-  try {
-    action();
-    return true;
-  } catch (error) {
-    if (!(error instanceof RuleError)) throw error;
-    toast.error(error.message);
-    return false;
-  }
-}
 
 function CarPicker({
   subs,

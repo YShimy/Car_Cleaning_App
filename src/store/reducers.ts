@@ -229,7 +229,7 @@ export function subscribe(
   const firstDate = first ? first.scheduledDate : toISODate(firstWashDate(sub.weeklyDays, now));
   const welcome = notification(
     customer.id,
-    'reminder',
+    'promo',
     existing ? 'Car added to your plan' : `Welcome to your compound's wash day`,
     `Your ${carLabel(car)} will be washed on ${formatDateLong(firstDate)} between ${SERVICE_WINDOW_SENTENCE}.`,
     now,

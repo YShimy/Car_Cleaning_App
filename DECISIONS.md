@@ -113,3 +113,15 @@ One line per decision: **what** — why.
 - **`rules.ts` is at 100% line, branch and function coverage; reducers and selectors are tested against the generated data** — the business rules are the part most likely to change after interviews, so they are the most protected.
 - **The E2E test runs against the production build (`vite preview`) on a phone profile** — it tests what is deployed, not the dev server.
 - **The E2E asserts no console errors** — the quality bar in section 12 is checked on every run rather than by hand.
+
+## Phase 13 — Deployment
+
+- **One workflow: every push and pull request is checked; only `main` deploys** — a broken build can never reach the shared interview link.
+- **The deploy job has its own minimal permissions (`pages: write`, `id-token: write`)** — the check job, which runs third-party install scripts, can only read the repository.
+- **The end-to-end test runs in CI before deploy** — the main customer journey is proven on the exact build that gets published.
+- **GitHub Pages must be switched to "GitHub Actions" as its source once, in the repository settings** — this cannot be done from the code.
+
+## Phase 14 — Documentation
+
+- **README screenshots are taken in presentation mode** — they show the product, not the demo controls.
+- **The architecture diagram is Mermaid in the README** — GitHub renders it, and it lives next to the code it describes.

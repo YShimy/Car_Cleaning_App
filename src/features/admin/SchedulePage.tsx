@@ -157,11 +157,7 @@ export function SchedulePage() {
                 ) : (
                   <ul className="space-y-2">
                     {[...list]
-                      .sort(
-                        (a, b) =>
-                          Object.keys(WASH_STATUS).indexOf(a.status) -
-                          Object.keys(WASH_STATUS).indexOf(b.status),
-                      )
+                      .sort((a, b) => ORDER.indexOf(a.status) - ORDER.indexOf(b.status))
                       .map((wash) => {
                         const car = cars.find((c) => c.id === wash.carId);
                         const customer = customers.find((c) => c.id === wash.customerId);
